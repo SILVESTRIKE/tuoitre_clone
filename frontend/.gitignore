@@ -1,24 +1,27 @@
-# Logs
-logs
+# --- Node.js Dependencies ---
+node_modules/
+
+# --- Build outputs ---
+build/
+dist/
+
+# --- Local environment variables ---
+# These are typically for local dev, production config should be separate
+.env
+.env.development.local
+.env.test.local
+.env.local
+
+# --- Log files ---
+# (Less common in frontend, but can exist)
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# --- OS Specific ---
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db
+
+# --- IDE / Editor specific ---
+.vscode/
+.idea/
+*.iml
+*.iml.iml

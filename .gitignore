@@ -1,0 +1,26 @@
+# --- General ---
+# Ignore environment variables files (sensitive info)
+.env
+.env.*
+!.env.example # Keep example env file if you have one
+
+# --- OS Specific ---
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# --- IDE / Editor specific ---
+.vscode/
+.idea/
+*.iml
+*.iml.iml
+
+# --- Build outputs from root level (if any) ---
+# If you have a root build process, uncomment below
+# build/
+# dist/
+
+# --- Temporary / Cache ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
