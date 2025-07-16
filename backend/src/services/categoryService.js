@@ -22,9 +22,7 @@ const categoryService = {
     async deleteCategory(id) {
         return await Category.findByIdAndDelete(id);
     },
-    // async getArticlesByCategoryId(categoryId) {
-    //     return await Article.find({ category: categoryId });
-    // }
+
 };
 
 module.exports = categoryService;

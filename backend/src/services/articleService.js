@@ -25,7 +25,7 @@ const articleService = {
             return await Article.findOne({ slug });
         } catch (error) {
             console.error(`Lỗi khi lấy bài viết với slug ${slug}:`, error.message);
-            throw new Error('Không thể lấy bài viết');
+            throw new Error('Không thể lấy bài viết ');
         }
     },
 
@@ -67,7 +67,7 @@ const articleService = {
                 category: { $in: [cate._id] }
             });
         } catch (error) {
-            console.error(`Lỗi khi lấy bài viết theo danh mục với id ${categoryId}:`, error.message);
+            console.error(`Lỗi khi lấy bài viết theo danh mục với slug ${categorySlug}:`, error.message);
             throw new Error('Không thể lấy bài viết theo danh mục');
         }
     }

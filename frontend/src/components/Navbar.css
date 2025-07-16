@@ -1,0 +1,60 @@
+.navbar {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    /* Màu nền nhạt */
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Cho phép xuống dòng trên các màn hình nhỏ */
+}
+
+.navbar-label {
+    margin-right: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar-link,
+.navbar-button {
+    /* Style chung cho cả Link và Button */
+    margin-right: 0.75rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    /* Bỏ gạch chân cho Link */
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    font-size: 0.95rem;
+}
+
+.navbar-link:hover,
+.navbar-button:hover {
+    background-color: #e9ecef;
+    border-color: #bbb;
+    color: #000;
+}
+
+.navbar-link.active,
+.navbar-button.active {
+    /* Style cho mục đang được chọn */
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
+    font-weight: bold;
+}
+
+.navbar-loading,
+.navbar-error {
+    font-style: italic;
+    color: #777;
+    margin-left: 0.5rem;
+}
+
+.navbar-error {
+    color: red;
+}

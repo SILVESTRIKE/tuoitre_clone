@@ -1,0 +1,92 @@
+/* frontend/src/components/ArticleCard.css */
+.article-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* Stack image and content vertically */
+    transition: transform 0.2s ease-in-out;
+    font-family: sans-serif;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-card-image {
+    width: 100%;
+    height: 200px;
+    /* Fixed height for consistency */
+    object-fit: cover;
+    /* Ensure image covers the area without distortion */
+}
+
+.article-card-content {
+    padding: 15px;
+    flex-grow: 1;
+    /* Allow content to take available space */
+}
+
+.article-card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.article-card-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.article-card-title a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.article-card-sapo {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.article-card-meta {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: auto;
+    /* Push meta to the bottom */
+}
+
+/* Styling cho ArticleListPage để tạo layout grid */
+.article-list-container {
+    max-width: 1280px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.article-list-container h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    /* Responsive grid */
+    gap: 20px;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 20px;
+}

@@ -9,7 +9,7 @@ const articleRoutes = require('./src/routes/articleRoutes');
 const categoryRoutes = require('./src/routes/categoryRoutes');
 const errorHandler = require('./src/exception/errorHandler');
 const logger = require('./logging/logger');
-const crawlData = require('./src/jobs/newsCrawlerJob');
+// const crawlData = require('./src/jobs/newsCrawlerJob');
 const connectDB = require('./src/config/db');
 const app = express();
 
@@ -18,7 +18,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
-
 app.use('/api/articles', articleRoutes);
 app.use('/api/categories', categoryRoutes);
 
