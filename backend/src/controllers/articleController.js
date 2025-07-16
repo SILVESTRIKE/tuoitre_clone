@@ -3,7 +3,7 @@ const articleService = require('../services/articleService');
 const getAllArticles = async (req, res) => {
     try {
         const articles = await articleService.getAllArticles();
-        res.json(articles);
+        res.status(200).json(articles);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -64,7 +64,18 @@ const deleteArticle = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
-
+const getArticlesByCategory = async (req, res) => {
+    try {
+        console.log('Fetching articles for category ID:', req.params.id);
+        const articles = await articleService.getArticlesByCategorySlug(req.params.id);
+        if (!articles || articles.length === 0) {
+            return res.status(404).json({ message: 'No articles found for this category' });
+        }
+        res.json(articles);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
 module.exports = {
     getAllArticles,
     getArticleById,
@@ -72,4 +83,5 @@ module.exports = {
     createArticle,
     updateArticle,
     deleteArticle,
+    getArticlesByCategory,
 };

@@ -15,7 +15,7 @@ const articleSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        unique: true, // Unique index tự động được tạo
+        unique: true,
     },
     content: {
         type: [String],
@@ -26,11 +26,11 @@ const articleSchema = new mongoose.Schema({
         required: false,
         trim: true,
     },
-    category: {
+    category: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
         required: false,
-    },
+    }],
     slug: {
         type: String,
         required: false,

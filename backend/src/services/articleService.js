@@ -1,4 +1,5 @@
 const Article = require('../models/articleModel');
+const Category = require('../models/categoryModel');
 const mongoose = require('mongoose');
 
 const articleService = {
@@ -53,6 +54,21 @@ const articleService = {
         } catch (error) {
             console.error(`Lỗi khi xoá bài viết với id ${id}:`, error.message);
             throw new Error('Không thể xoá bài viết');
+        }
+    },
+    async getArticlesByCategorySlug(categorySlug) {
+        try {
+            const cate = await Category.findOne({ slug: categorySlug });
+
+            if (!cate) {
+                throw new Error('Danh mục không tồn tại');
+            }
+            return await Article.find({
+                category: { $in: [cate._id] }
+            });
+        } catch (error) {
+            console.error(`Lỗi khi lấy bài viết theo danh mục với id ${categoryId}:`, error.message);
+            throw new Error('Không thể lấy bài viết theo danh mục');
         }
     }
 };

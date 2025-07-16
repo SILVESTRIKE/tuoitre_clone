@@ -2,9 +2,9 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const puppeteer = require('puppeteer');
 const cron = require('node-cron');
-const Articles = require('../models/articleModel'); // Sửa đường dẫn import
+const Articles = require('../models/articleModel');
 const Category = require('../models/categoryModel');
-const logger = require('../../logging/logger'); // Sửa đường dẫn import
+const logger = require('../../logging/logger');
 
 // --- CẤU HÌNH ---
 const TARGET_URL = 'https://tuoitre.vn';
@@ -12,7 +12,6 @@ const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 const MAX_ARTICLES_PER_CATEGORY = parseInt(process.env.MAX_ARTICLES_PER_CATEGORY || 10, 10);
 const RANDOM_DELAY = () => Math.random() * 100 + 50;
 
-// Theo dõi các URL đã crawl trong mỗi chu kỳ
 let crawledUrls = new Set();
 
 const crawlData = {
@@ -206,7 +205,6 @@ const crawlData = {
     },
 };
 
-// Lập lịch crawl mỗi 30 phút
 cron.schedule('*/30 * * * *', () => {
     logger.info('[CRON] Bắt đầu công việc crawl định kỳ.');
     crawlData.startCrawl();

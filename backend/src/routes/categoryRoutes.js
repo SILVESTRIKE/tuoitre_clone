@@ -56,7 +56,6 @@ router.get('/', categoryController.getAllCategories);
  *         description: Internal server error
  */
 router.get('/:id', categoryController.getCategoryById);
-
 // --- Routes for Admin/CRUD (Optional) ---
 /*
 // POST /categories - Create a new category (Admin only)

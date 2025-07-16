@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const articleController = require('../controllers/articleController');
-const validate = require('../middleware/validationMiddleware'); // Assuming you have validation middleware
+const validate = require('../../middleware/validationMiddleware'); // Assuming you have validation middleware
 const { articleSchema } = require('../dto/articleDto'); // Assuming Joi schema for articles
 const logger = require('../../logging/logger');
 
@@ -97,8 +97,31 @@ router.get('/:id', articleController.getArticleById);
  *         description: Internal server error
  */
 router.get('/slug/:slug', articleController.getArticleBySlug);
-
-
+/**
+ * @swagger
+ * /articles:
+ *   post:
+ *     summary: Create a new article
+ *     tags: [Articles]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Article' # Reference to your Article schema in Swagger config
+ *     responses:
+ *       201:
+ *         description: Article created successfully.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Article'
+ *       400:
+ *         description: Bad request
+ *       500:
+ *         description: Internal server error
+ */
+router.get('/category/:id', articleController.getArticlesByCategory);
 // --- Routes for Admin/CRUD (Optional for this challenge, but good to have) ---
 /*
 // POST /articles - Create a new article (Admin only)

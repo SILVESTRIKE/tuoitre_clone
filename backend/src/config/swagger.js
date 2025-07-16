@@ -27,7 +27,6 @@ const options = {
         },
         // You can define schemas here for request/response bodies if not using JSDoc in controllers
     },
-    // Paths to files containing OpenAPI definitions
     apis: ['./routes/*.js'], // Scan all files in the routes directory for JSDoc definitions
 };
 

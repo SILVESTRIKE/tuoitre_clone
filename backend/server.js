@@ -39,14 +39,13 @@ app.use((req, res, next) => {
 });
 
 app.use(errorHandler);
-//newsCrawlerJob.start();
-
-const PORT = process.env.PORT;
 
 const startServer = async () => {
     try {
         await connectDB();
-        await crawlData.startCrawl();
+
+        // await crawlData.startCrawl();
+
         const PORT = process.env.PORT || 3000;
         app.listen(PORT, () => console.log(`Server đang chạy trên cổng ${PORT}`));
     } catch (err) {

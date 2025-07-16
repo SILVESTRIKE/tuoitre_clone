@@ -1,4 +1,5 @@
 const Category = require('../models/categoryModel');
+const Article = require('../models/articleModel');
 
 const categoryService = {
     async getAllCategories() {
@@ -20,7 +21,10 @@ const categoryService = {
 
     async deleteCategory(id) {
         return await Category.findByIdAndDelete(id);
-    }
+    },
+    // async getArticlesByCategoryId(categoryId) {
+    //     return await Article.find({ category: categoryId });
+    // }
 };
 
 module.exports = categoryService;
