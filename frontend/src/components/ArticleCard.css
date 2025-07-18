@@ -1,4 +1,3 @@
-/* frontend/src/components/ArticleCard.css */
 .article-card {
     background-color: #ffffff;
     border-radius: 8px;
@@ -60,6 +59,7 @@
     font-size: 0.85em;
     color: #888;
     margin-top: auto;
+    text-align: right;
     /* Push meta to the bottom */
 }
 
